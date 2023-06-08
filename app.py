@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/<part>')
 def root(part=None):
 	if request.method == "POST":
-		if request.form.get("func"):
+		if request.form.get("func") == "youtube":
 			api_key = request.form.get("apikey")
 			keyword = request.form.get("keyword")
 			return youtube.YoutubeSearch(api_key, keyword)
