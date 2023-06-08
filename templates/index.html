@@ -4,7 +4,6 @@
 </head> 
 <body>
 <header>
-<img scr="{{ url_for('static',filename='img/logo.png') }}" />
 {% if part %}
     {{part}}
 {% else %}
@@ -25,7 +24,8 @@
         <input type="text" name="keyword" /><br/>
         <input type="submit" />
     </form>
-  </section>
+	<img src="{{ url_for('static',filename='img/logo.png') }}" />
+</section>
   <section>- 추천도서
     <ul><li>D. Morley, C. Parker, Understanding Computers 15th Ed.</li>  
             <li>최윤철, 임순범, 소셜미디어 시대의 인터넷 이해</li>
