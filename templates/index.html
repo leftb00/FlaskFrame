@@ -1,6 +1,6 @@
 <head>
-    <title>Flask Frame</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/common.css') }}" />
+  <title>Flask Frame</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/common.css') }}" />
 </head> 
 <body>
 <header>
@@ -16,13 +16,21 @@
 </nav> 
 
 <article>도서 안내
-    <section>- 베스트셀러
-        <ul><li>최윤철, 임순범, 컴퓨터와 IT기술의 이해</li>
-              <li>임순범, 박희민, HTML5 웹프로그래밍 입문</li></ul></section>
-    <section>- 추천도서
-       <ul><li>D. Morley, C. Parker, Understanding Computers 15th Ed.</li>  
-             <li>최윤철, 임순범, 소셜미디어 시대의 인터넷 이해</li>
-       </ul> </section>
+  <section>- Youtube -
+    <form method="post">
+        <input type="hidden" name="func" value="youtube"/>
+        API KEY:
+        <input type="text" name="apikey" /><br/>
+        검색어:
+        <input type="text" name="keyword" /><br/>
+        <input type="submit" />
+    </form>
+  </section>
+  <section>- 추천도서
+    <ul><li>D. Morley, C. Parker, Understanding Computers 15th Ed.</li>  
+            <li>최윤철, 임순범, 소셜미디어 시대의 인터넷 이해</li>
+    </ul>
+  </section>
 </article>
 <aside>이벤트<br/><p>📕주목도서</p><p>🖐작가와의 만남</p></aside>
 <footer>작성자: 배은석</footer>

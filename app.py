@@ -1,12 +1,18 @@
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template, send_from_directory, request
+import youtube
 
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', methods=('GET', 'POST'))
 @app.route('/<part>')
 def root(part=None):
-	if(part is None):
+	if request.method == "POST":
+		if request.form.get("func"):
+			api_key = request.form.get("apikey")
+			keyword = request.form.get("keyword")
+			return youtube.YoutubeSearch(api_key, keyword)
+	elif(part is None):
 		return render_template('index.html')
 	elif(part == 'm1'):
 		return render_template('m1.html')
@@ -21,7 +27,7 @@ def root(part=None):
 	return "<h2>Not found.</h2>"
 
 
-if __name__=="__name__":
+if __name__=="__main__":
 	# app.run()
 	# debug를 할 때
 	app.run(debug=True)
